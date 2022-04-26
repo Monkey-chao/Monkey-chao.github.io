@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2022/04/25/hello-world/"/>
-      <url>/2022/04/25/hello-world/</url>
+      <title>Java经典面试题</title>
+      <link href="/2022/04/26/java-jing-dian-mian-shi-ti/"/>
+      <url>/2022/04/26/java-jing-dian-mian-shi-ti/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Java经典面试题"><a href="#Java经典面试题" class="headerlink" title="Java经典面试题"></a>Java经典面试题</h1><h2 id="一、Java基础篇"><a href="#一、Java基础篇" class="headerlink" title="一、Java基础篇"></a>一、Java基础篇</h2><h3 id="1-1说一说你对Java访问权限的了解"><a href="#1-1说一说你对Java访问权限的了解" class="headerlink" title="1.1说一说你对Java访问权限的了解"></a>1.1说一说你对Java访问权限的了解</h3><p>​Java语言为我们提供了三种访问修饰符，即private,protected,public,在使用这些修饰符修饰目标时，一共可以形成四种访问权限，即private,default,protected,public,注意在不加任何修饰符时为default权限。</p><p>*<strong>在修饰成员变量&#x2F;成员方法时，该成员的四种访问权限如下：</strong></p><table><thead><tr><th>private</th><th align="left">该成员可以被该类内部成员访问</th></tr></thead><tbody><tr><td>default</td><td align="left">该成员可以被该类内部成员访问，也可以被同一包下的其他类访问</td></tr><tr><td>protected</td><td align="left">该成员可以被该类内部成员访问，也可以被同一包下的其他类访问,还可以被它的子类访问</td></tr><tr><td>public</td><td align="left">该成员可以在任意包下，任意的类访问</td></tr></tbody></table><p>*<strong>在修饰类时，该类只有两种访问权限</strong></p><table><thead><tr><th>default</th><th>可以被同一包下的其他类访问</th></tr></thead><tbody><tr><td>public</td><td>该成员可以在任意包下，任意的类访问</td></tr></tbody></table>]]></content>
       
       
       
