@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java经典面试题, YangChao">
-    <meta name="description" content="带你了解Java面试常见题型">
+    <meta name="keywords" content="JVM的垃圾回收算法, YangChao">
+    <meta name="description" content="JVM垃圾回收算法讲解">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
 
     
 
-    <title>Java经典面试题 | YangChao</title>
+    <title>JVM的垃圾回收算法 | YangChao</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -334,12 +334,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java经典面试题</h1>
+                    <h1 class="description center-align post-title">JVM的垃圾回收算法</h1>
                 </div>
             </div>
         </div>
@@ -459,8 +459,12 @@
                                 <span class="chip bg-color">面试</span>
                             </a>
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/JVM/">
+                                <span class="chip bg-color">JVM</span>
                             </a>
                         
                     </div>
@@ -498,14 +502,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.7k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    4 分
                 </div>
                 
 
@@ -525,185 +529,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java经典面试题"><a href="#Java经典面试题" class="headerlink" title="Java经典面试题"></a>Java经典面试题</h1><h2 id="一、Java基础篇"><a href="#一、Java基础篇" class="headerlink" title="一、Java基础篇"></a>一、Java基础篇</h2><h3 id="1、说一说你对Java访问权限的了解"><a href="#1、说一说你对Java访问权限的了解" class="headerlink" title="1、说一说你对Java访问权限的了解"></a>1、说一说你对Java访问权限的了解</h3><p>​	Java语言为我们提供了三种访问修饰符，即private,protected,public,在使用这些修饰符修饰目标时，一共可以形成四种访问权限，即private,default,protected,public,注意在不加任何修饰符时为default权限。</p>
-<h5 id="在修饰成员变量-x2F-成员方法时，该成员的四种访问权限如下："><a href="#在修饰成员变量-x2F-成员方法时，该成员的四种访问权限如下：" class="headerlink" title="*在修饰成员变量/成员方法时，该成员的四种访问权限如下："></a>*<strong>在修饰成员变量/成员方法时，该成员的四种访问权限如下：</strong></h5><table>
-<thead>
-<tr>
-<th>private</th>
-<th align="left">该成员可以被该类内部成员访问</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>default</td>
-<td align="left">该成员可以被该类内部成员访问，也可以被同一包下的其他类访问</td>
-</tr>
-<tr>
-<td>protected</td>
-<td align="left">该成员可以被该类内部成员访问，也可以被同一包下的其他类访问,还可以被它的子类访问</td>
-</tr>
-<tr>
-<td>public</td>
-<td align="left">该成员可以在任意包下，任意的类访问</td>
-</tr>
-</tbody></table>
-<h5 id="在修饰类时，该类只有两种访问权限"><a href="#在修饰类时，该类只有两种访问权限" class="headerlink" title="*在修饰类时，该类只有两种访问权限"></a>*<strong>在修饰类时，该类只有两种访问权限</strong></h5><table>
-<thead>
-<tr>
-<th>default</th>
-<th>可以被同一包下的其他类访问</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public</td>
-<td>该成员可以在任意包下，任意的类访问</td>
-</tr>
-</tbody></table>
-<h3 id="2、请你说说多线程"><a href="#2、请你说说多线程" class="headerlink" title="2、请你说说多线程"></a>2、请你说说多线程</h3><h4 id="（1）、线程和进程的关系、为什么使用多线程："><a href="#（1）、线程和进程的关系、为什么使用多线程：" class="headerlink" title="（1）、线程和进程的关系、为什么使用多线程："></a>（1）、线程和进程的关系、为什么使用多线程：</h4><p>​		线程是操作系统调度的最小单元,它可以让一个进程并发地处理多个任务,也叫轻量级进程。所以,在一个进程里可以创建多个线程,这些线程都拥有各自的计数器、堆栈、局部变量,并且能够共享进程内的资源。由于共享资源,处理器便可以在这些线程之间快速切换,从而让使用者感觉这些线程在同时执行。 总的来说,操作系统可以同时执行多个任务,每个任务就是一个进程。进程可以同时执行多个任务,每个任务就是一个线程。一个程序运行之后至少有一个进程,而一个进程可以包含多个线程,但至少要包含一个线程。</p>
-<h5 id="使用多线会给开发人员带来显著的好处-而使用多线程的原因主要有以下几点："><a href="#使用多线会给开发人员带来显著的好处-而使用多线程的原因主要有以下几点：" class="headerlink" title="*使用多线会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点："></a>*<strong>使用多线会给开发人员带来显著的好处,而使用多线程的原因主要有以下几点：</strong></h5><ol>
-<li>更多的CPU核心 现代计算机处理器性能的提升方式,已经从追求更高的主频向追求更多的核心发展,所以处理器的核心数量会越来越多,充分地利用处理器的核心则会显著地提高程序的性能。而程序使用多线程技术,就可以将计算逻辑分配到多个处理器核心上,显著减少程序的处理时间,从而随着更多处理器核心的加入而变得更有效率。 </li>
-<li>更快的响应时间 我们经常要针对复杂的业务编写出复杂的代码,如果使用多线程技术,就可以将数据一致性不强的操作派发给其他线程处理（也可以是消息队列）,如上传图片、发送邮件、生成订单等。这样响应用户请求的线程就能够尽快地完成处理,大大地缩短了响应时间,从而提升了用户体验。</li>
-<li>更好的编程模型 Java为多线程编程提供了良好且一致的编程模型,使开发人员能够更加专注于问题的解决,开发者只需为此问题建立合适的业务模型,而无需绞尽脑汁地考虑如何实现多线程。一旦开发人员建立好了业务模型,稍作修改就可以将其方便地映射到Java提供的多线程编程模型上</li>
-</ol>
-<h4 id="（2）、怎么保证线程安全："><a href="#（2）、怎么保证线程安全：" class="headerlink" title="（2）、怎么保证线程安全："></a>（2）、怎么保证线程安全：</h4><h5 id="保证线程安全基本的方式："><a href="#保证线程安全基本的方式：" class="headerlink" title="*保证线程安全基本的方式："></a>*<strong>保证线程安全基本的方式：</strong></h5><p>​		Java保证线程安全的方式有很多,其中较为常用的有三种,按照资源占用情况由轻到重排列,这三种保证线程安全的方式分别是原子类、volatile、锁。 JDK从1.5开始提供了java.util.concurrent.atomic包,这个包中的原子操作类提供了一种用法简单、性能高效、线程安全地更新一个变量的方式。在atomic包里一共提供了17个类,按功能可以归纳为4种类型的原子更新方式,分别是原子更新基本类型、原子更新引用类型、原子更新属性、原子更新数组。无论原子更新哪种类型,都要遵循“比较和替换”规则,即比较要更新的值是否等于期望值,如果是则更新,如果不是则失败。</p>
-<h5 id="原子类、volatile、锁："><a href="#原子类、volatile、锁：" class="headerlink" title="*原子类、volatile、锁："></a>*<strong>原子类、volatile、锁：</strong></h5><blockquote>
-<p>volatile是轻量级的synchronized,它在多处理器开发中保证了共享变量的“可见性”,从而可以保证单个变量读写时的线程安全。可见性问题是由处理器核心的缓存导致的,每个核心均有各自的缓存,而这些缓存均要与内存进行同步。volatile具有如下的内存语义：当写一个volatile变量时,该线程本地内存中的共享变量的值会被立刻刷新到主内存；当读一个volatile变量时,该线程本地内存会被置为无效,迫使线程直接从主内存中读取共享变量。 原子类和volatile只能保证单个共享变量的线程安全,锁则可以保证临界区内的多个共享变量的线程安全,Java中加锁的方式有两种,分别是synchronized关键字和Lock接口。synchronized是比较早期的API,在设计之初没有考虑到超时机制、非阻塞形式,以及多个条件变量。若想通过升级的方式让它支持这些相对复杂的功能,则需要大改它的语法结构,不利于兼容旧代码。因此,JDK的开发团队在1.5新增了Lock接口,并通过Lock支持了上述的功能,即：支持响应中断、支持超时机制、支持以非阻塞的方式获取锁、支持多个条件变量（阻塞队列）。</p>
+                <h1 id="JVM的垃圾回收算法"><a href="#JVM的垃圾回收算法" class="headerlink" title="JVM的垃圾回收算法"></a>JVM的垃圾回收算法</h1><h2 id="一、常用的垃圾回收算法有："><a href="#一、常用的垃圾回收算法有：" class="headerlink" title="一、常用的垃圾回收算法有："></a>一、常用的垃圾回收算法有：</h2><h3 id="1、标记清除算法"><a href="#1、标记清除算法" class="headerlink" title="1、标记清除算法"></a>1、标记清除算法</h3><blockquote>
+<p>算法分为“标记”和“清除”两个阶段,首先标记出所有需要回收的对象,在标记完成后,统一回收掉所有被标记的对象,也可以反过来,标记存活的对象,统一回收所有未被标记的对象。它主要有如下两个缺点： 第一个是执行效率不稳定,如果Java堆中包含大量对象,而且其中大部分是需要被回收的,这时必须进行大量标记和清除的动作,导致标记和清除两个过程的执行效率都随对象数量增长而降低。 第二个是内存空间碎片化问题,标记、清除之后会产生大量不连续的内存碎片,空间碎片太多可能会导致当程序在运行过程中需要分配较大对象时无法找到足够的连续的内存而不得不提前触发另一次垃圾收集。</p>
 </blockquote>
-<h5 id="实现线程安全的方式（加分项）："><a href="#实现线程安全的方式（加分项）：" class="headerlink" title="*实现线程安全的方式（加分项）："></a>*<strong>实现线程安全的方式（加分项）：</strong></h5><ol>
-<li>无状态设计 线程安全问题是由多线程并发修改共享变量引起的,如果在并发环境中没有设计共享变量,则自然就不会出现线程安全问题了。这种代码实现可以称作“无状态实现”,所谓状态就是指共享变量。</li>
-<li>不可变设计 如果在并发环境中不得不设计共享变量,则应该优先考虑共享变量是否为只读的,如果是只读场景就可以将共享变量设计为不可变的,这样自然也不会出现线程安全问题了。具体来说,就是在变量前加final修饰符,使其不可被修改,如果变量是引用类型,则将其设计为不可变类型（参考String类）。 </li>
-<li>并发工具 java.util.concurrent包提供了几个有用的并发工具类,一样可以保证线程安全： - Semaphore：就是信号量,可以控制同时访问特定资源的线程数量。 - CountDownLatch：允许一个或多个线程等待其他线程完成操作。 - CyclicBarrier：让一组线程到达一个屏障时被阻塞,直到最后一个线程到达屏障时,屏障才会打开,所有被屏障拦截的线程才会继续运行。 </li>
-<li>本地存储 我们也可以考虑使用ThreadLocal存储变量,ThreadLocal可以很方便地为每一个线程单独存一份数据,也就是将需要并发访问的资源复制成多份。这样一来,就可以避免多线程访问共享变量了,它们访问的是自己独占的资源,它从根本上隔离了多个线程之间的数据共享。</li>
-</ol>
-<h4 id="（3）、你知道哪些线程安全的集合？"><a href="#（3）、你知道哪些线程安全的集合？" class="headerlink" title="（3）、你知道哪些线程安全的集合？"></a>（3）、你知道哪些线程安全的集合？</h4><p>​		java.util包下的集合类中,大部分都是非线程安全的,但也有少数的线程安全的集合类,例如Vector、Hashtable,它们都是非常古老的API。虽然它们是线程安全的,但是性能很差,已经不推荐使用了。对于这个包下非线程安全的集合,可以利用Collections工具类,该工具类提供的synchronizedXxx()方法,可以将这些集合类包装成线程安全的集合类。 </p>
-<h5 id="从JDK-1-5开始-并发包下新增了大量高效的并发的容器-这些容器按照实现机制可以分为三类。"><a href="#从JDK-1-5开始-并发包下新增了大量高效的并发的容器-这些容器按照实现机制可以分为三类。" class="headerlink" title="*从JDK 1.5开始,并发包下新增了大量高效的并发的容器,这些容器按照实现机制可以分为三类。"></a>*<strong>从JDK 1.5开始,并发包下新增了大量高效的并发的容器,这些容器按照实现机制可以分为三类。</strong></h5><ul>
-<li>第一类是以降低锁粒度来提高并发性能的容器,它们的类名以Concurrent开头,如ConcurrentHashMap。</li>
-<li>第二类是采用写时复制技术实现的并发容器,它们的类名以CopyOnWrite开头,如CopyOnWriteArrayList。</li>
-<li>第三类是采用Lock实现的阻塞队列,内部创建两个Condition分别用于生产者和消费者的等待,这些类都实现了BlockingQueue接口,如ArrayBlockingQueue。</li>
-</ul>
-<h5 id="加分回答："><a href="#加分回答：" class="headerlink" title="*加分回答："></a>*<strong>加分回答：</strong></h5><blockquote>
-<p>Collections还提供了如下三类方法来返回一个不可变的集合,这三类方法的参数是原有的集合对象,返回值是该集合的“只读”版本。通过Collections提供的三类方法,可以生成“只读”的Collection或Map。 emptyXxx()：返回一个空的不可变的集合对象 singletonXxx()：返回一个只包含指定对象的不可变的集合对象 unmodifiableXxx()：返回指定集合对象的不可变视图</p>
+<h3 id="2、标记复制算法"><a href="#2、标记复制算法" class="headerlink" title="2、标记复制算法"></a>2、标记复制算法</h3><blockquote>
+<p>将可用内存按容量划分为大小相等的两块,每次只使用其中的一块。当这一块的内存用完了,就将还存活着的对象复制到另外一块上面,然后再把已使用过的内存空间一次清理掉。对于多数对象都是可回收的情况,算法需要复制的就是占少数的存活对象,而且每次都是针对整个半区进行内存回收,分配内存时也就不用考虑有空间碎片的复杂情况,只要移动堆顶指针,按顺序分配即可。 这种复制回收算法的代价是将可用内存缩小为了原来的一半,空间浪费未免太多了一点。另外,如果内存中多数对象都是存活的,这种算法将会产生大量的内存间复制的开销。所以,现在的商用Java虚拟机大多都优先采用了这种收集算法去回收新生代。 </p>
 </blockquote>
-<h4 id="（4）、说说你了解线程同步方式"><a href="#（4）、说说你了解线程同步方式" class="headerlink" title="（4）、说说你了解线程同步方式"></a>（4）、说说你了解线程同步方式</h4><p>Java主要通过加锁的方式实现线程同步,而锁有两类,分别是synchronized和Lock。</p>
-<h5 id="synchronized可以加在三个不同的位置-对应三种不同的使用方式-这三种方式的区别是锁对象不同："><a href="#synchronized可以加在三个不同的位置-对应三种不同的使用方式-这三种方式的区别是锁对象不同：" class="headerlink" title="*synchronized可以加在三个不同的位置,对应三种不同的使用方式,这三种方式的区别是锁对象不同："></a>*<strong>synchronized可以加在三个不同的位置,对应三种不同的使用方式,这三种方式的区别是锁对象不同：</strong></h5><p>加在普通方法上,则锁是当前的实例（this）。</p>
-<p> 加在静态方法上,则锁是当前类的Class对象。 </p>
-<p>加在代码块上,则需要在关键字后面的小括号里,显式指定一个对象作为锁对象。 </p>
-<p><strong>小结：</strong>不同的锁对象,意味着不同的锁粒度,所以我们不应该无脑地将它加在方法前了事,尽管通常这可以解决问题。而是应该根据要锁定的范围,准确的选择锁对象,从而准确地确定锁的粒度,降低锁带来的性能开销。</p>
-<h5 id="synchronized："><a href="#synchronized：" class="headerlink" title="*synchronized："></a>*<strong>synchronized：</strong></h5><p>​		synchronized是比较早期的API,在设计之初没有考虑到超时机制、非阻塞形式,以及多个条件变量。若想通过升级的方式让synchronized支持这些相对复杂的功能,则需要大改它的语法结构,不利于兼容旧代码。因此,JDK的开发团队在1.5引入了Lock接口,并通过Lock支持了上述的功能。</p>
-<h5 id="Lock："><a href="#Lock：" class="headerlink" title="*Lock："></a>*<strong>Lock：</strong></h5><p>​		Lock支持的功能包括：支持响应中断、支持超时机制、支持以非阻塞的方式获取锁、支持多个条件变量（阻塞队列）。</p>
-<h5 id="加分回答：-1"><a href="#加分回答：-1" class="headerlink" title="*加分回答："></a>*<strong>加分回答：</strong></h5><blockquote>
-<p>synchronized采用“CAS+Mark Word”实现,为了性能的考虑,并通过锁升级机制降低锁的开销。在并发环境中,synchronized会随着多线程竞争的加剧,按照如下步骤逐步升级：无锁、偏向锁、轻量级锁、重量级锁。 Lock则采用“CAS+volatile”实现,其实现的核心是AQS。AQS是线程同步器,是一个线程同步的基础框架,它基于模板方法模式。在具体的Lock实例中,锁的实现是通过继承AQS来实现的,并且可以根据锁的使用场景,派生出公平锁、不公平锁、读锁、写锁等具体的实现。</p>
+<h3 id="3、标记整理算法"><a href="#3、标记整理算法" class="headerlink" title="3、标记整理算法"></a>3、标记整理算法</h3><blockquote>
+<p>针对老年代对象的存亡特征,1974年Edward Lueders提出了另外一种有针对性的“标记-整理”算法,其中的标记过程仍然与“标记-清除”算法一样,但后续步骤不是直接对可回收对象进行清理,而是让所有存活的对象都向内存空间一端移动,然后直接清理掉边界以外的内存。 如果移动存活对象,尤其是在老年代这种每次回收都有大量对象存活区域,移动存活对象并更新所有引用这些对象的地方将会是一种极为负重的操作,而且这种对象移动操作必须全程暂停用户应用程序才能进行,像这样的停顿被最初的虚拟机设计者形象地描述为“Stop The World”。</p>
 </blockquote>
-<h4 id="（5）、说说线程的状态"><a href="#（5）、说说线程的状态" class="headerlink" title="（5）、说说线程的状态"></a>（5）、说说线程的状态</h4><p>*<strong>Java线程在运行的生命周期中,在任意给定的时刻,只能处于下列6种状态之一：</strong> </p>
-<ul>
-<li>NEW ：初始状态,线程被创建,但是还没有调用start方法。 </li>
-<li>RUNNABLE：可运行状态,线程正在JVM中执行,但是有可能在等待操作系统的调度。 </li>
-<li>BLOCKED ：阻塞状态,线程正在等待获取监视器锁。 </li>
-<li>WTING ：等待状态,线程正在等待其他线程的通知或中断。 </li>
-<li>TIMED_WTING：超时等待状态,在WTING的基础上增加了超时时间,即超出时间自动返回。 </li>
-<li>TERMINATED：终止状态,线程已经执行完毕。</li>
-</ul>
-<blockquote>
-<p>​		线程在创建之后默认为初始状态,在调用start方法之后进入可运行状态,可运行状态不代表线程正在运行,它有可能正在等待操作系统的调度。进入等待状态的线程需要其他线程的通知才能返回到可运行状态,而超时等待状态相当于在等待状态的基础上增加了超时限制,除了他线程的唤醒,在超时时间到达时也会返回运行状态。此外,线程在执行同步方法时,在没有获取到锁的情况下,会进入到阻塞状态。线程在执行完run方法之后,会进入到终止状态。 加分回答 Java将操作系统中的就绪和运行两个状态合并为可运行状态（RUNNABLE）。线程阻塞于synchronized的监视器锁时会进入阻塞状态,而线程阻塞于Lock锁时进入的却是等待状态,这是因为Lock接口实现类对于阻塞的实现均使用了LockSupport类中的相关方法。</p>
-</blockquote>
-<h3 id="3、说一说你对反射的了解"><a href="#3、说一说你对反射的了解" class="headerlink" title="3、说一说你对反射的了解"></a>3、说一说你对反射的了解</h3><h4 id="（1）、概念"><a href="#（1）、概念" class="headerlink" title="（1）、概念"></a>（1）、概念</h4><blockquote>
-<p>Java程序中,许多对象在运行时都会有编译时异常和运行时异常两种,例如多态情况下Car c = new Audi(); 这行代码运行时会生成一个c变量,在编译时该变量的类型是Car,运行时该变量类型为Audi；另外还有更极端的情况,例如程序在运行时接收到了外部传入的一个对象,这个对象的编译时类型是Object,但程序又需要调用这个对象运行时类型的方法,这种情况下,有两种解决方法：第一种做法是假设在编译时和运行时都完全知道类型的具体信息,在这种情况下,可以先使用instanceof运算符进行判断,再利用强制类型转换将其转换成其运行时类型的变量。第二种做法是编译时根本无法预知该对象和类可能属于哪些类,程序只依靠运行时信息来发现该对象和类的真实信息,这就必须使用反射。</p>
-</blockquote>
-<h4 id="（2）、通过反射机制可以实现什么"><a href="#（2）、通过反射机制可以实现什么" class="headerlink" title="（2）、通过反射机制可以实现什么"></a>（2）、通过反射机制可以实现什么</h4><blockquote>
-<ul>
-<li><p>程序运行时,可以通过反射获得任意一个类的Class对象,并通过这个对象查看这个类的信息；</p>
-</li>
-<li><p>程序运行时,可以通过反射创建任意一个类的实例,并访问该实例的成员； </p>
-</li>
-<li><p>程序运行时,可以通过反射机制生成一个类的动态代理类或动态代理对象。</p>
-</li>
-</ul>
-</blockquote>
-<h5 id="加分回答：-2"><a href="#加分回答：-2" class="headerlink" title="*加分回答："></a>*加分回答：</h5><blockquote>
-<p>Java的反射机制在实际项目中应用广泛,常见的应用场景有： - 使用JDBC时,如果要创建数据库的连接,则需要先通过反射机制加载数据库的驱动程序； - 多数框架都支持注解/XML配置,从配置中解析出来的类是字符串,需要利用反射机制实例化； - 面向切面编程（AOP）的实现方案,是在程序运行时创建目标对象的代理类,这必须由反射机制来实现。</p>
-</blockquote>
-<h3 id="4、数据结构篇"><a href="#4、数据结构篇" class="headerlink" title="4、数据结构篇"></a>4、数据结构篇</h3><h4 id="（1）、请你说说ArrayList和LinkedList的区别"><a href="#（1）、请你说说ArrayList和LinkedList的区别" class="headerlink" title="（1）、请你说说ArrayList和LinkedList的区别"></a>（1）、请你说说ArrayList和LinkedList的区别</h4><ol>
-<li>ArrayList的实现是基于数组,LinkedList的实现是基于双向链表。</li>
-<li>对于随机访问ArrayList要优于LinkedList,ArrayList可以根据下标以O(1)时间复杂度对元素进行随机访问,而LinkedList的每一个元素都依靠地址指针和它后一个元素连接在一起,查找某个元素的时间复杂度是O(N)。 </li>
-<li>对于插入和删除操作,LinkedList要优于ArrayList,因为当元素被添加到LinkedList任意位置的时候,不需要像ArrayList那样重新计算大小或者是更新索引。 4. LinkedList比ArrayList更占内存,因为LinkedList的节点除了存储数据,还存储了两个引用,一个指向前一个元素,一个指向后一个元素。</li>
-</ol>
-<h4 id="（2）、请你说说ConcurrentHashMap"><a href="#（2）、请你说说ConcurrentHashMap" class="headerlink" title="（2）、请你说说ConcurrentHashMap"></a>（2）、请你说说ConcurrentHashMap</h4><p>​		在JDK8中,ConcurrentHashMap的底层数据结构与HashMap一样,也是采用“数组+链表+红黑树”的形式。同时,它又采用锁定头节点的方式降低了锁粒度,以较低的性能代价实现了线程安全。底层数据结构的逻辑可以参考HashMap的实现。</p>
-<h5 id="线程安全的实现机制："><a href="#线程安全的实现机制：" class="headerlink" title="*线程安全的实现机制："></a>*线程安全的实现机制：</h5><ol>
-<li><p>初始化数组或头节点时,ConcurrentHashMap并没有加锁,而是CAS的方式进行原子替换（原子操作,基于Unsafe类的原子操作API）。 </p>
-</li>
-<li><p>插入数据时会进行加锁处理,但锁定的不是整个数组,而是槽中的头节点。所以,ConcurrentHashMap中锁的粒度是槽,而不是整个数组,并发的性能很好。 </p>
-</li>
-<li><p>扩容时会进行加锁处理,锁定的仍然是头节点。并且,支持多个线程同时对数组扩容,提高并发能力。每个线程需先以CAS操作抢任务,争抢一段连续槽位的数据转移权。抢到任务后,该线程会锁定槽内的头节点,然后将链表或树中的数据迁移到新的数组里。 </p>
-</li>
-<li><p>查找数据时并不会加锁,所以性能很好。另外,在扩容的过程中,依然可以支持查找操作。如果某个槽还未进行迁移,则直接可以从旧数组里找到数据。如果某个槽已经迁移完毕,但是整个扩容还没结束,则扩容线程会创建一个转发节点存入旧数组,届时查找线程根据转发节点的提示,从新数组中找到目标数据。 </p>
-<h5 id="加分回答：-3"><a href="#加分回答：-3" class="headerlink" title="*加分回答："></a>*加分回答：</h5><blockquote>
-<p> ConcurrentHashMap实现线程安全的难点在于多线程并发扩容,即当一个线程在插入数据时,若发现数组正在扩容,那么它就会立即参与扩容操作,完成扩容后再插入数据到新数组。在扩容的时候,多个线程共同分担数据迁移任务,每个线程负责的迁移数量是 <code>(数组长度 &gt;&gt;&gt; 3) / CPU核心数</code>。 也就是说,为线程分配的迁移任务,是充分考虑了硬件的处理能力的。多个线程依据硬件的处理能力,平均分摊一部分槽的迁移工作。另外,如果计算出来的迁移数量小于16,则强制将其改为16,这是考虑到目前服务器领域主流的CPU运行速度,每次处理的任务过少,对于CPU的算力也是一种浪费。</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="（3）、请你说说HashMap底层原理"><a href="#（3）、请你说说HashMap底层原理" class="headerlink" title="（3）、请你说说HashMap底层原理"></a>（3）、请你说说HashMap底层原理</h4><blockquote>
-<p>在JDK8中,HashMap底层是采用“数组+链表+红黑树”来实现的。 HashMap是基于哈希算法来确定元素的位置（槽）的,当我们向集合中存入数据时,它会计算传入的Key的哈希值,并利用哈希值取余来确定槽的位置。如果元素发生碰撞,也就是这个槽已经存在其他的元素了,则HashMap会通过链表将这些元素组织起来。如果碰撞进一步加剧,某个链表的长度达到了8,则HashMap会创建红黑树来代替这个链表,从而提高对这个槽中数据的查找的速度。 HashMap中,数组的默认初始容量为16,这个容量会以2的指数进行扩容。具体来说,当数组中的元素达到一定比例的时候HashMap就会扩容,这个比例叫做负载因子,默认为0.75。自动扩容机制,是为了保证HashMap初始时不必占据太大的内存,而在使用期间又可以实时保证有足够大的空间。采用2的指数进行扩容,是为了利用位运算,提高扩容运算的效率。 </p>
-</blockquote>
-<h5 id="put-流程-put-方法的执行过程中-主要包含四个步骤："><a href="#put-流程-put-方法的执行过程中-主要包含四个步骤：" class="headerlink" title="*put()流程 put()方法的执行过程中,主要包含四个步骤："></a>*put()流程 put()方法的执行过程中,主要包含四个步骤：</h5><ol>
-<li><p>判断数组,若发现数组为空,则进行首次扩容。 </p>
-</li>
-<li><p>判断头节点,若发现头节点为空,则新建链表节点,存入数组。 </p>
-</li>
-<li><p>判断头节点,若发现头节点非空,则将元素插入槽内。 </p>
-</li>
-<li><p>插入元素后,判断元素的个数,若发现超过阈值则再次扩容。 </p>
-<h5 id="其中-第3步又可以细分为如下三个小步骤："><a href="#其中-第3步又可以细分为如下三个小步骤：" class="headerlink" title="*其中,第3步又可以细分为如下三个小步骤："></a>*其中,第3步又可以细分为如下三个小步骤：</h5><p>1.若元素的key与头节点一致,则直接覆盖头节点。</p>
-<p>2.若元素为树型节点,则将元素追加到树中。 </p>
-<p>3.若元素为链表节点,则将元素追加到链表中。追加后,需要判断链表长度以决定是否转为红黑树。若链表长度达到8、数组容量未达到64,则扩容。若链表长度达到8、数组容量达到64,则转为红黑树。</p>
-<h5 id="扩容机制-向HashMap中添加数据时-有三个条件会触发它的扩容行为："><a href="#扩容机制-向HashMap中添加数据时-有三个条件会触发它的扩容行为：" class="headerlink" title="*扩容机制 向HashMap中添加数据时,有三个条件会触发它的扩容行为："></a>*扩容机制 向HashMap中添加数据时,有三个条件会触发它的扩容行为：</h5><ol>
-<li><p>如果数组为空,则进行首次扩容。 </p>
-</li>
-<li><p>将元素接入链表后,如果链表长度达到8,并且数组长度小于64,则扩容。 </p>
-</li>
-<li><p>添加后,如果数组中元素超过阈值,即比例超出限制（默认为0.75）,则扩容。 并且,每次扩容时都是将容量翻倍,即创建一个2倍大的新数组,然后再将旧数组中的数组迁移到新数组里。由于HashMap中数组的容量为2^N,所以可以用位移运算计算新容量,效率很高。 </p>
-<h5 id="加分回答：-4"><a href="#加分回答：-4" class="headerlink" title="*加分回答："></a>*加分回答：</h5><blockquote>
-<p>​		HashMap是非线程安全的,在多线程环境下,多个线程同时触发HashMap的改变时,有可能会发生冲突。所以,在多线程环境下不建议使用HashMap,可以考虑使用Collections将HashMap转为线程安全的HashMap,更为推荐的方式则是使用ConcurrentHashMap。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<h4 id="（4）、请说说你对Java集合的了解"><a href="#（4）、请说说你对Java集合的了解" class="headerlink" title="（4）、请说说你对Java集合的了解"></a>（4）、请说说你对Java集合的了解</h4><blockquote>
-<p>Java中的集合类分为4大类,分别由4个接口来代表,它们是Set、List、Queue、Map。其中,Set、List、Queue、都继承自Collection接口。 - Set代表无序的、元素不可重复的集合。 - List代表有序的、元素可以重复的集合。 - Queue代表先进先出（FIFO）的队列。 - Map代表具有映射关系（key-value）的集合。 Java提供了众多集合的实现类,它们都是这些接口的直接或间接的实现类,其中比较常用的有：HashSet、TreeSet、ArrayList、LinkedList、ArrayDeque、HashMap、TreeMap等。 加分回答 上面所说的集合类的接口或实现,都位于java.util包下,这些实现大多数都是非线程安全的。虽然非线程安全,但是这些类的性能较好。如果需要使用线程安全的集合类,则可以利用Collections工具类,该工具类提供的synchronizedXxx()方法,可以将这些集合类包装成线程安全的集合类。 java.util包下的集合类中,也有少数的线程安全的集合类,例如Vector、Hashtable,它们都是非常古老的API。虽然它们是线程安全的,但是性能很差,已经不推荐使用了。 </p>
-<p>从JDK 1.5开始,并发包下新增了大量高效的并发的容器,这些容器按照实现机制可以分为三类。</p>
-<p>第一类是以降低锁粒度来提高并发性能的容器,它们的类名以Concurrent开头,如ConcurrentHashMap。</p>
-<p>第二类是采用写时复制技术实现的并发容器,它们的类名以CopyOnWrite开头,如CopyOnWriteArrayList。</p>
-<p>第三类是采用Lock实现的阻塞队列,内部创建两个Condition分别用于生产者和消费者的等待,这些类都实现了BlockingQueue接口,如ArrayBlockingQueue。</p>
-</blockquote>
-<h3 id="5、JVM篇"><a href="#5、JVM篇" class="headerlink" title="5、JVM篇"></a>5、JVM篇</h3><h4 id="（1）、说说你了解的JVM内存模型"><a href="#（1）、说说你了解的JVM内存模型" class="headerlink" title="（1）、说说你了解的JVM内存模型"></a>（1）、说说你了解的JVM内存模型</h4><h5 id="JVM由三部分组成："><a href="#JVM由三部分组成：" class="headerlink" title="*JVM由三部分组成："></a>*JVM由三部分组成：</h5><ol>
-<li><p>类加载子系统,可以根据指定的全限定名来载入类或接口。</p>
-</li>
-<li><p>执行引擎,负责执行那些包含在被载入类的方法中的指令。 </p>
-</li>
-<li><p>当程序运行时,JVM需要内存来存储许多内容,例如：字节码、对象、参数、返回值、局部变量、运算的中间结果,等等,JVM会把这些东西都存储到运行时数据区中,以便于管理。而运行时数据区又可以分为方法区、堆、虚拟机栈、本地方法栈、程序计数器。 </p>
-<h5 id="加分回答：-5"><a href="#加分回答：-5" class="headerlink" title="*加分回答："></a>*加分回答：</h5><blockquote>
-<p>运行时数据区是开发者重点要关注的部分,因为程序的运行与它密不可分,很多错误的排查也需要基于对运行时数据区的理解。在运行时数据区所包含的几块内存空间中,方法区和堆是线程之间共享的内存区域,而虚拟机栈、本地方法栈、程序计数器则是线程私有的区域,就是说每个线程都有自己的这个区域。</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="（2）、说说JVM的垃圾回收机制"><a href="#（2）、说说JVM的垃圾回收机制" class="headerlink" title="（2）、说说JVM的垃圾回收机制"></a>（2）、说说JVM的垃圾回收机制</h4><p>​		当前商业虚拟机的垃圾收集器,大多数都遵循了“分代收集”的理论进行设计,分代收集名为理论,实质是一套符合大多数程序运行实际情况的经验法则。而分代收集理论,建立在如下三个分代假说之上,即弱分代假说、强分代假说、跨代引用假说。</p>
-<h5 id="依据分代假说理论-垃圾回收可以分为如下几类："><a href="#依据分代假说理论-垃圾回收可以分为如下几类：" class="headerlink" title="*依据分代假说理论,垃圾回收可以分为如下几类："></a>*依据分代假说理论,垃圾回收可以分为如下几类：</h5><ol>
-<li><p>新生代收集：目标为新生代的垃圾收集。 </p>
-</li>
-<li><p>老年代收集：目标为老年代的垃圾收集,目前只有CMS收集器会有这种行为。 </p>
-</li>
-<li><p>混合收集：目标为整个新生代及部分老年代的垃圾收集,目前只有G1收集器会有这种行为。 </p>
-</li>
-<li><p>整堆收集：目标为整个堆和方法区的垃圾收集。</p>
-</li>
-</ol>
-<h5 id="加分回答：-6"><a href="#加分回答：-6" class="headerlink" title="*加分回答："></a>*加分回答：</h5><blockquote>
-<p>HotSpot虚拟机内置了很多垃圾收集器,其中针对新生代的垃圾收集器有Serial、ParNew、Parallel Scavenge,针对老年代的垃圾收集器有CMS、Serial Old、Parallel Old。</p>
-<p>此外,HotSpot还内置了面向整堆的G1收集器。在上述收集器中,常见的组合方式有：</p>
-<ol>
-<li>Serial + Serial Old,是客户端模式下常用的收集器。 </li>
-<li>ParNew + CMS,是服务端模式下常用的收集器。 </li>
-<li>Parallel Scavenge + Parallel Old,适用于后台运算而不需要太多交互的分析任务。</li>
-</ol>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><blockquote>
+<p>目前,新生代的垃圾回收采用标记复制算法比较多,老年代的垃圾回收采用标记整理算法比较多。而标记复制算法浪费一半内存的缺点长期以来被人诟病,所以业界也有人针对该算法给出了改进的方案。 IBM公司曾有一项专门研究对新生代“朝生夕灭”的特点做了更量化的诠释——新生代中的对象有98%熬不过第一轮收集。因此并不需要按照1∶1的比例来划分新生代的内存空间。在1989年,Andrew Appel针对具备“朝生夕灭”特点的对象,提出了一种更优化的半区复制分代策略,现在称为“Appel式回收”。 Appel式回收的具体做法是把新生代分为一块较大的Eden空间和两块较小的Survivor空间,每次分配内存只使用Eden和其中一块Survivor。发生垃圾搜集时,将Eden和Survivor中仍然存活的对象一次性复制到另外一块Survivor空间上,然后直接清理掉Eden和已用过的那块Survivor空间。 HotSpot虚拟机的Serial、ParNew等新生代收集器均采用了这种策略来设计新生代的内存布局。HotSpot虚拟机默认Eden和Survivor的大小比例是8:1:1,也即每次新生代中可用内存空间为整个新生代容量的90%（Eden的80%加上一个Survivor的10%）,只有一个Survivor空间,即10%的新生代是会被“浪费”的。 98%的对象可被回收仅仅是“普通场景”下测得的数据,任何人都没有办法百分百保证每次回收都只有不多于10%的对象存活,因此Appel式回收还有一个充当罕见情况的“逃生门”的安全设计,当Survivor空间不足以容纳一次Minor GC之后存活的对象时,就需要依赖其他内存区域（实际上大多就是老年代）进行分配担保。</p>
 </blockquote>
 
                 
@@ -731,7 +567,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://monkey-chao.github.io/2022/04/26/java-jing-dian-mian-shi-ti/">https://monkey-chao.github.io/2022/04/26/java-jing-dian-mian-shi-ti/</a>
+                    <a href="https://monkey-chao.github.io/2022/04/26/jvm-la-ji-hui-shou-suan-fa/">https://monkey-chao.github.io/2022/04/26/jvm-la-ji-hui-shou-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -773,8 +609,12 @@
                                     <span class="chip bg-color">面试</span>
                                 </a>
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                                <a href="/tags/JVM/">
+                                    <span class="chip bg-color">JVM</span>
                                 </a>
                             
                         </div>
@@ -1263,10 +1103,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2022/04/26/java-jing-dian-mian-shi-ti/">
                     <div class="card-image">
@@ -1284,9 +1123,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1299,7 +1138,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1319,7 +1157,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2022/04/26/jvm-la-ji-hui-shou-suan-fa/">
@@ -1353,6 +1191,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     

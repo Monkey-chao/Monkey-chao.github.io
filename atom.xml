@@ -6,7 +6,7 @@
   <link href="https://monkey-chao.github.io/atom.xml" rel="self"/>
   
   <link href="https://monkey-chao.github.io/"/>
-  <updated>2022-04-26T13:17:18.773Z</updated>
+  <updated>2022-04-27T03:50:00.665Z</updated>
   <id>https://monkey-chao.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://monkey-chao.github.io/2022/04/26/java-jing-dian-mian-shi-ti/"/>
     <id>https://monkey-chao.github.io/2022/04/26/java-jing-dian-mian-shi-ti/</id>
     <published>2022-04-26T05:19:03.000Z</published>
-    <updated>2022-04-26T13:17:18.773Z</updated>
+    <updated>2022-04-27T03:50:00.665Z</updated>
     
     
       
@@ -40,6 +40,35 @@
     <category term="面试" scheme="https://monkey-chao.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
     <category term="Java" scheme="https://monkey-chao.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM的垃圾回收算法</title>
+    <link href="https://monkey-chao.github.io/2022/04/26/jvm-la-ji-hui-shou-suan-fa/"/>
+    <id>https://monkey-chao.github.io/2022/04/26/jvm-la-ji-hui-shou-suan-fa/</id>
+    <published>2022-04-26T03:35:03.000Z</published>
+    <updated>2022-04-27T03:50:51.328Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JVM的垃圾回收算法&quot;&gt;&lt;a href=&quot;#JVM的垃圾回收算法&quot; class=&quot;headerlink&quot; title=&quot;JVM的垃圾回收算法&quot;&gt;&lt;/a&gt;JVM的垃圾回收算法&lt;/h1&gt;&lt;h2 id=&quot;一、常用的垃圾回收算法有：&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="面试宝典" scheme="https://monkey-chao.github.io/categories/%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/"/>
+    
+    
+    <category term="面试" scheme="https://monkey-chao.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="java" scheme="https://monkey-chao.github.io/tags/java/"/>
+    
+    <category term="JVM" scheme="https://monkey-chao.github.io/tags/JVM/"/>
     
   </entry>
   
